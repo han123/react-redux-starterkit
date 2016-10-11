@@ -1,17 +1,18 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import './styles/main.less';
 
 class Application extends React.Component{
     render (){
         return (
             <div>
-                Application6
+                Application
             </div>
         );
     }
 };
 
-ReactDOM.render(<Application />
-    , app)
+ReactDOM.render(<Application />, document.getElementById('app'));
 
-module.hot.accept()
+module.hot.accept();
