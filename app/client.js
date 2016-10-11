@@ -1,17 +1,22 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Router, Route, browserHistory } from 'react-router';
+import Layout from './components/Layout';
+import EventsMain from './pages/home';
+
 
 class Application extends React.Component{
     render (){
         return (
-            <div>
-                Application6
-            </div>
+            <Router history={browserHistory}>
+                <Router component={Layout}>
+                    <Route path="/" component={EventsMain} />
+                </Router>
+            </Router>
         );
     }
 };
 
-ReactDOM.render(<Application />
-    , app)
+ReactDOM.render(<Application />, document.getElementById('app'));
 
-module.hot.accept()
+module.hot.accept();
