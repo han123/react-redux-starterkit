@@ -2,17 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
 import Layout from './components/Layout';
-import EventsMain from './pages/home';
+import Home from './pages/home';
+import { Provider } from 'react-redux';
+import { syncHistoryWithStore } from 'react-router-redux';
+import store from './store';
+
 import './styles/main.less';
+
+const history = syncHistoryWithStore(browserHistory, store);
+
 
 class Application extends React.Component{
     render (){
         return (
-            <Router history={browserHistory}>
-                <Router component={Layout}>
-                    <Route path="/" component={EventsMain} />
+            <Provider store={store}>
+                <Router history={history}>
+                    <Router component={Layout}>
+                        <Route path="/" component={Home} />
+                    </Router>
                 </Router>
-            </Router>
+            </Provider>
         );
     }
 };
