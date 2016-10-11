@@ -43,6 +43,10 @@ var clientConfig = {
             {
                 test: /\.less$/,
                 loader: "style!css!less"
+            },
+            {
+                test: /\.json$/,
+                loader: 'json-loader',
             }
         ]
     }
