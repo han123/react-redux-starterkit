@@ -4,6 +4,8 @@ import { Router, Route, browserHistory } from 'react-router';
 import Layout from './components/Layout';
 import EventsMain from './pages/home';
 
+require ('./styles/main.less');
+
 
 class Application extends React.Component{
     render (){
